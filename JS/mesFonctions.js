@@ -27,3 +27,17 @@ function AfficherLesServices() {
         }
     });
 }
+
+function AfficherLesDeals() {
+    $.ajax({
+        type: "get",
+        url: "PHP/getLesDeals.php",
+        success: function(data) {
+            $('#divDeals').empty();
+            $('#divDeals').append(data);
+        },
+        error: function() {
+            alert("Erreur sur les Deals");
+        }
+    });
+}
